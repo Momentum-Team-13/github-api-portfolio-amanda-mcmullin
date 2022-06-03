@@ -1,15 +1,15 @@
 //ensure data is linked
-// console.log('Is this thing on?')
+// console.log('Is this thing on?');
 
-//create main box for all the things
-const profilePage = document.querySelector('#profile')
+const profile = document.querySelector('#profile');
 
 //variables
-const gitHubUrl = "https://api.github.com/users/amanda-mcmullin"
-const gitHubRepoUrl = "https://api.github.com/users/amanda-mcmullin/repos"
+const profileURL = "https://api.github.com/users/amanda-mcmullin";
+const repoURL = "https://api.github.com/users/amanda-mcmullin/repos";
 
+//**********PROFILE DATA********** 
 //fetch request for PROFILE DATA
-fetch (gitHubUrl, {
+fetch (profileURL, {
     method: 'GET',
     headers:{'Content-Type': 'application/json'},
 })
@@ -17,39 +17,71 @@ fetch (gitHubUrl, {
 .then(function (response) {
     //when you have the promised data, give it to me as json
     return response.json()
-}) 
+})
 //promised data from above will be passed in 
 .then (function (data) {
     //returned data printed to console*****WORKING*****
-    // console.log('Response from GitHub API:', data.name)
+    console.log(data)
+    console.log('Response from GitHub API:', data.name)
     //call function *which will be built outside the fetch* on the returned data 
     buildProfile(data)
-})
+});
 
+//FUNCTION WILL USE profileData TO BUILD REQUIRED FIELDS
+function buildProfile(profileData) {
+    //name
+    let nameElement = document.createElement('h1');
+    nameElement.innerText = `${profileData.name}`;
+    profile.appendChild(nameElement);
+
+    //photo
+    let photoElement = document.createElement('img');
+    photoElement.src = profileData.avatar_url;
+    photoElement.alt = "user's profile pic";
+    profile.appendChild(photoElement);
+
+    //location
+    let locationElement = document.createElement('div');
+    profile.appendChild(locationElement);
+
+    //GitHub URL:
+    let urlElement = document.createElement('div');
+    urlElement.src = profileData.url;
+    urlElement.innerText = `GitHub URL: ${profileData.url}`;
+    profile.appendChild(urlElement);
+
+    //GitHub username:
+    let usernameElement = document.createElement('div');
+    usernameElement.innerText = `GitHub username: ${profileData.login}`;
+    profile.appendChild(usernameElement);
+}
+
+//**********REPO DATA********** 
 //fetch request for REPOSITORY DATA
-fetch(gitHubRepoUrl, {
+fetch(repoURL, {
     method: 'GET',
     headers: {'Content-Type': 'application/json'},
 })
 .then(function (response){
-    return response.json()
+    return response.json();
 })
-.then(function(repos) {
+.then(function(repo) {
     //*****WORKING***** 
-    // console.log('Response from GitHub Repositories:', repos)
-    // console.log(typeof repos)
-    buildRepoList(repos)
-})
+    console.log('Response from GitHub Repositories:', repo);
+    console.log(typeof repo);
+    //call function *which will be built outside the fetch* that turns repos from repoarray into their own element
+    buildRepoLoop(repo);
+});
 
 
-    //name 
+function buildRepoLoop(profileData) {
+    for (let repo of profileData) {
+        profile.appendChild(buildRepoElement(repo.name))
+    }
+}
 
-    //photo
-
-    //location
-
-    //GitHub URL:
-
-    //GitHub username:
-
-    //GitHub Repos
+function buildRepoElement(repoName) {
+    let el = document.createElement('p');
+    el.innerText = repoName;
+    return el;
+}

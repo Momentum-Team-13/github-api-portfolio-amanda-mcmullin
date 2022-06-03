@@ -5,15 +5,15 @@
 In today's project, you'll be asked to not only write code to make live Ajax requests, but also write some HTML and CSS to bring a mockup to life.
 
 Using the mockup below as a guide and using the GitHub API,
-[]retrieve data about yourself from the GitHub API to create a profile page that shows information and a list of your repos.
+[x]retrieve data about yourself from the GitHub API to create a profile page that shows information and a list of your repos.
 
 All of the data about you, including your
-[]name and
-[]your GitHub username,
+[x]name and
+[x]your GitHub username,
 should be retrieved from the GitHub API.
 
-[]Make sure to get your avatar url fromGitHub and
-[]use it as an avatar on the page.
+[x]Make sure to get your avatar url fromGitHub and
+[x]use it as an avatar on the page.
 []Your username and the names of your repos should be links that work.
 
 You do _not_ have to include the font icon for each repo, but if you want to, you can use the Font Awesome library. You can include it in your project by adding the link to the stylesheet in your the `<head>` tag in your HTML:
@@ -47,10 +47,10 @@ https://api.github.com/users/your-username-here
 
 Note that
 
-[]In your HTML you will need a basic structure to add onto with the JS code.
-[]Once you have some HTML in place, begin setting up your AJAX calls and
-[]the callback functions to work with the data you retrieve.
-[]Don't forget to console.log the data to check what you're getting back.
+[x]In your HTML you will need a basic structure to add onto with the JS code.
+[x]Once you have some HTML in place, begin setting up your AJAX calls and
+[x]the callback functions to work with the data you retrieve.
+[x]Don't forget to console.log the data to check what you're getting back.
 
 Insomnia will be helpful to test the AJAX calls as you get started.
 
