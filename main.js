@@ -2,6 +2,7 @@
 // console.log('Is this thing on?');
 
 const profile = document.querySelector('#profile');
+const repoList = document.querySelector('#repoList')
 
 //variables
 const profileURL = "https://api.github.com/users/amanda-mcmullin";
@@ -42,17 +43,24 @@ function buildProfile(profileData) {
 
     //location
     let locationElement = document.createElement('div');
+    locationElement.innerText = `Location: ${profileData.location}`
     profile.appendChild(locationElement);
 
     //GitHub URL:
-    let urlElement = document.createElement('div');
-    urlElement.src = profileData.url;
-    urlElement.innerText = `GitHub URL: ${profileData.url}`;
+    let urlElement = document.createElement('a');
+    urlElement.src = profileData.html_url;
+    // urlElement.innerText = `GitHub URL: ${profileData.url}`;
+    urlElement.innerHTML = "GitHub URL: " + `${profileData.login}`;
+    urlElement.href=profileData.html_url;
+    // el.innerText = repoName.name;
+    // el.href = repoName.html_url
     profile.appendChild(urlElement);
 
     //GitHub username:
     let usernameElement = document.createElement('div');
+    usernameElement.href = profileData.login
     usernameElement.innerText = `GitHub username: ${profileData.login}`;
+    
     profile.appendChild(usernameElement);
 }
 
@@ -68,7 +76,6 @@ fetch(repoURL, {
 .then(function(repo) {
     //*****WORKING***** 
     console.log('Response from GitHub Repositories:', repo);
-    console.log(typeof repo);
     //call function *which will be built outside the fetch* that turns repos from repoarray into their own element
     buildRepoLoop(repo);
 });
@@ -76,12 +83,14 @@ fetch(repoURL, {
 
 function buildRepoLoop(profileData) {
     for (let repo of profileData) {
-        profile.appendChild(buildRepoElement(repo.name))
+        buildRepoElement(repo)
     }
 }
 
 function buildRepoElement(repoName) {
-    let el = document.createElement('p');
-    el.innerText = repoName;
-    return el;
+    let el = document.createElement('a');
+    el.classList.add('repoItem')
+    el.innerText = repoName.name;
+    el.href = repoName.html_url
+    repoList.appendChild(el);
 }

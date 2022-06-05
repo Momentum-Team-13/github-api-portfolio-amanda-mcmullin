@@ -25,7 +25,7 @@ You do _not_ have to include the font icon for each repo, but if you want to, yo
 />
 ```
 
-[]You are welcome to style this however you like and use any additional data you want to from the GitHub API. You don't have to reproduce this mockup exactly, but you should have all the same data included.
+[x]You are welcome to style this however you like and use any additional data you want to from the GitHub API. You don't have to reproduce this mockup exactly, but you should have all the same data included.
 
 ![mockup.png](mockup.png)
 
@@ -37,7 +37,7 @@ Since there are no starter files provided, you'll need to
 [x]JavaScript files and
 [x]link them together properly.
 
-[]Before you start writing any JavaScript, we suggest you spend time examining the GitHub API docs listed below to get familiar with how you can obtain the data.
+[x]Before you start writing any JavaScript, we suggest you spend time examining the GitHub API docs listed below to get familiar with how you can obtain the data.
 
 The URL that will give you the initial data about your GitHub profile is:
 
