@@ -14,7 +14,7 @@ should be retrieved from the GitHub API.
 
 [x]Make sure to get your avatar url fromGitHub and
 [x]use it as an avatar on the page.
-[]Your username and the names of your repos should be links that work.
+[~]Your username and the names of your repos should be links that work.
 
 You do _not_ have to include the font icon for each repo, but if you want to, you can use the Font Awesome library. You can include it in your project by adding the link to the stylesheet in your the `<head>` tag in your HTML:
 

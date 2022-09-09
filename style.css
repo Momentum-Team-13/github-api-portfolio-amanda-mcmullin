@@ -1,33 +1,80 @@
-/* body {
-    display: flex;
-    flex-wrap: wrap;
-} */
-
-#container{
-    border: 5px solid #9da3a4;
+#profile-section {
+    border: 5px solid #463f3a;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: space-between;
+    background: url(whitebrickbackground.jpg);
+    background-size: cover;
+    font-size: smaller; 
+    padding: 10px;
+    color:#463f3a
+    
 }
-#profile {
-    border: 5px solid #c6bbd0;
-    background-color: #f2e9e4;
+
+#repo-section {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border:#463f3a solid 5px;
+    background: url(whitebrickbackground.jpg);
+    background-size: cover;
+    color: #463f3a;
+    font-size: 35px; 
+    text-align: center;
+    padding: 20px; 
 }
 
-h1 {
-    font-family: 'Poppins', sans-serif;
-    text-align: right;
-    font-size: larger;
+h3 {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+    background:#cbc1b3;
+    border-radius: 50px;
+    margin: 5px;
 }
 
 img {
-    max-width: 100px;
+    border-radius: 50%;
+    max-width: 40%;
+    margin: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #463f3a; 
 }
 
-#repoList {
-    font-family: 'Poppins', sans-serif;
-    border: 5px solid #c6bbd0;
-    background-color: #f2e9e4;
-    display: flex;
-    flex-direction: column;
-    font-size: 15px;
-    padding: 5px 15px 15px 5px;
-    
+a {
+    background-color: #bcb8b1; 
+    box-shadow: 4px 4px 8px rgb(255, 255, 255);
+    padding: 10px; 
+    margin: 5px; 
+    display: grid; 
+    text-decoration: none;
+    border-radius: 45px;
+    color: #463f3a;
+
+}
+
+a:link {
+    color: #463f3a;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    transition: .35s
+}
+
+.giturl {
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+}
+
+.location {
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+}
+
+.username {
+    padding: 10;
+    margin: 0;
+    font-size: 25px;
 }
